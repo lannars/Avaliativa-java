@@ -1,0 +1,42 @@
+public class Livro {
+    public String titulo;
+    private String autor;
+    protected int AnoPublicacao;
+    int preco;
+
+    public Livro(String titulo, String autor, int anoPublicacao, int preco) {
+        this.titulo = titulo;
+        this.autor = autor;
+        AnoPublicacao = anoPublicacao;
+        this.preco = preco;
+    }
+
+    public Livro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+
+    public Livro() {
+    }
+
+
+
+
+
+import java.util.Scanner;
+
+public class Aplicacao {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    Livro littlelivro = new Livro("A Seleção", "Kiera", 2018, 40);
+
+    Livro livro = new Livro("Táticas do Amor" , "Não sei");
+
+    Livro livrinho = new Livro();
+
+        System.out.println(littlelivro);
+        System.out.println(livro);
+        System.out.println(livrinho);
+
+    }
+}
