@@ -1,0 +1,63 @@
+* Pacote entidade * 
+public class Pessoa {
+
+    public String nome;
+    private int Idade;
+    protected String Endereco;
+    int Telefone;
+
+    public Pessoa(String nome, int idade, String endereco, int telefone) {
+        this.nome = nome;
+        Idade = idade;
+        Endereco = endereco;
+        Telefone = telefone;
+    }
+
+    public int getIdade() {
+        return Idade;
+    }
+
+    public void setIdade(int idade) {
+        Idade = idade;
+    }
+
+    public String getEndereco() {
+        return Endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        Endereco = endereco;
+    }
+
+    public int getTelefone() {
+        return Telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        Telefone = telefone;
+    }
+}
+
+*Pacote Aplicação*
+
+import java.util.Scanner;
+
+public class Aplicacao {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    Pessoa littlepessoa = new Pessoa("Alanna", 16, "Rua A", 456);
+
+
+        System.out.println("O nome é: " + littlepessoa.nome);
+
+        System.out.println("A idade é: " + littlepessoa.getIdade());
+        littlepessoa.setIdade(16);
+        System.out.println("A nova idade é: " + littlepessoa.getIdade());
+
+        System.out.println("O endereço é: " + littlepessoa.getEndereco());
+        littlepessoa.setEndereco("Rua B");
+        System.out.println("O novo endereço é: " + littlepessoa.getEndereco());
+
+        System.out.println("O telefone é: " + littlepessoa.getTelefone());
+        littlepessoa.setTelefone(123);
+        System.out.println("O novo telefone é: " + littlepessoa.getTelefone());
