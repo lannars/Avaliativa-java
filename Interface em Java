@@ -1,0 +1,59 @@
+package Aplicacao;
+
+import Entidade.ImportPessoaFisica;
+import Entidade.ImportPessoaJuridica;
+import Entidade.Imposto;
+
+public class Aplicacao {
+    public static void main(String[] args) {
+        Imposto[] impostos = new Imposto[2];
+        impostos[0] = new ImportPessoaJuridica(101010);
+        impostos[1] = new ImportPessoaFisica(202020);
+
+        for (Imposto imposto : impostos) {
+            System.out.println("Imposto: " + imposto.calcularImposto());
+        }
+    }
+}
+
+
+package Entidade;
+
+public class ImportPessoaJuridica {
+    private double rendaAnual;
+
+    public ImportPessoaJuridica(double rendaAnual) {
+        this.rendaAnual = rendaAnual;
+    }
+
+    public double getRendaAnual() {
+        return rendaAnual * 0.10;
+    }
+}
+
+
+ackage Entidade;
+
+public class ImportPessoaFisica implements Imposto {
+    private double rendaAnual;
+
+    public ImportPessoaFisica() {
+        this.rendaAnual = rendaAnual;
+    }
+
+    @Override
+    public double calcularImposto() {
+        return rendaAnual * 0.20;
+    }
+
+    public double getRendaAnual() {
+        return rendaAnual;
+    }
+}
+
+package Entidade;
+
+public interface Imposto {
+
+    double calcularImposto();
+}
